@@ -1,7 +1,7 @@
 
 // reception box
 
-let welcome = alert("Bienvenue, détendez vous. Vous allez jouer au Chifoumi !");
+//let welcome = alert("Bienvenue, détendez vous. Vous allez jouer au Chifoumi !");
 
 // asking player's name and firstname only
 
@@ -19,7 +19,7 @@ function promptBox1 (){
     && (/^[a-zA-Z]+$/.test(userFirstname = prompt("Veuillez entrer votre prénom")))){
     correct = alert("Bonjour " + userName + " " + userFirstname + " , vous allez commencer une partie contre l'ordinateur!");
     } else { error = alert("Recommencez :p");}
-    return {userName, userFirstname}
+    return  userFirstname
 };
 
 
@@ -27,7 +27,21 @@ function promptBox1 (){
 // prompt box and verify if it contains a string in both statements
 promptBox1();
 
-if (userName != null){promptBox2();}
+// let returnNames = promptBox1();
+// let userNameEntry = returnNames.userName,
+// userFirstnameEntry = returnNames.userFirstname;
+
+
+
+
+console.log(userFirstname);
+// 2nd prompt box to start the game
+if ((userFirstname != null) && (/^[a-zA-Z]+$/.test(userFirstname)))
+{
+    promptBox2();
+} 
+
+
 
 function promptBox2(){
     let proposal = prompt("Choisissez entre Pierre,Papier ou Ciseaux");
@@ -38,13 +52,14 @@ function promptBox2(){
 
 // correctEntry();
 
-// function correctEntry(proposal){
-//     if (proposal ==='Pierre' || 'pierre' 
-//         && proposal === 'Papier' || 'papier'
-//         && proposal === 'Ciseaux' || 'ciseaux'){ 
+// function correctEntry(userChoice){
+//     if (userChoice ==='Pierre' || 'pierre' 
+//         && userChoice === 'Papier' || 'papier'
+//         && userChoice === 'Ciseaux' || 'ciseaux'){ 
 
 //     }
 // }
+
 
 
 // let rock = null;
