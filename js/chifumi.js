@@ -120,42 +120,111 @@
 // function (){
 
 // }
-
+let robotChoice = Math.floor(Math.random() * 3);
+console.log(robotChoice);
 
 let userName = prompt("Veuillez entrer votre nom.");
 let userFirstname = null;
 let proposal = null;
+let toContinue = false;
+// let robotChoice = Math.floor(Math.random() * 3);
+// console.log(robotChoice);
+
 
 if (/^[a-zA-Z]+$/.test(userName)){
     userFirstname = prompt("Veuillez entre votre prénom");
-} else alert("Recommencez :p");
+} 
 
 if ((/^[a-zA-Z]+$/.test(userFirstname)) && (userFirstname != null)){
-    alert("Bonjour " + userName + " " + userFirstname + " , vous allez commencer une partie contre l'ordinateur!"); + promptBox2();
-}
+        alert("Bonjour " + userName + " " + userFirstname + " , vous allez commencer une partie contre l'ordinateur!");
+        + promptBox2();
+    } else alert("Recommencez :p");
 
-//let proposal = prompt("Choisissez entre Pierre,Papier ou Ciseaux");
 
 
 function promptBox2(){
-proposal = prompt("Choisissez entre Pierre,Papier ou Ciseaux");
+proposal = prompt("Choisissez entre Pierre, Feuille ou Ciseaux");
     if ((proposal ==='Pierre' || proposal ==='pierre') 
-        || (proposal === 'Papier' || proposal ==='papier')
+        || (proposal === 'Feuille' || proposal ==='feuille')
         || (proposal === 'Ciseaux' || proposal ==='ciseaux')){
-        return proposal + robot();
+        return (toContinue = true) + proposal;
         }
     else return alert ("Veuillez choisir parmis les propositions indiquées.");
 }
 
+proposal = proposal.charAt(0).toUpperCase() + proposal.slice(1); 
+
+console.log(robotChoice, proposal);
+//if (toContinue) {robot();}
+
+if ((toContinue) && (robotChoice===0)){robot0();}
+
+if ((toContinue) && (robotChoice===1)){robot1();}
+
+if ((toContinue) && (robotChoice===2)){robot2();}
 
 
 
-function robot(){console.log("test");}
 
-// function toContinue(){
-//     if ((/^[a-zA-Z]+$/.test(userName)) && (/^[a-zA-Z]+$/.test(userFirstname)))
-//         {
-//             return alert("Bonjour " + userName + " " + userFirstname + " , vous allez commencer une partie contre l'ordinateur!");
-//         } 
-//     else return alert("Recommencez :p");
-// };
+
+function robot0(){
+
+    if (proposal==="Pierre"){
+        alert("Le robot a choisi ... Pierre! Il y a égalité. Rejouez!");
+    } else if (proposal==="Feuille"){
+        alert("Le robot a choisi ... Pierre! Vous avez gagné!");
+    } else alert("Le robot a choisi ... Pierre! Vous avez perdu!");
+
+}
+
+
+function robot1(){
+
+    if (proposal==="Pierre"){
+        alert("Le robot a choisi ... Feuille! Vous avez perdu!");
+    } else if (proposal==="Feuille"){
+        alert("Le robot a choisi ... Feuille! Il y a égalité. Rejouez!");
+    } else alert("Le robot a choisi ... Feuille! Vous avez gagné!");
+
+}
+
+
+function robot2(){
+
+    if (proposal==="Pierre"){
+        alert("Le robot a choisi ... Ciseaux! Vous avez gagné!");
+    } else if (proposal==="Feuille"){
+        alert("Le robot a choisi ... Ciseaux! Vous avez perdu!");
+    } else alert("Le robot a choisi ... Ciseaux! Il y a égalité. Rejouez!");
+
+}
+
+
+// if ((robotChoice=0) && (proposal = "Pierre")){
+//     alert("Le robot a choisi ... Pierre! Il y a égalité. Rejouez!");
+// } else if ((robotChoice=0) && (proposal = "Feuille"))
+//     { alert ("Le robot a choisi ... Pierre! Vous avez gagné!")
+// } else if ((robotChoice=0) && (proposal = "Ciseaux"))
+//     { alert ("Le robot a choisi ... Pierre! Vous avez perdu!")
+// }
+
+
+
+// switch (robotChoice=0){
+//     case (proposal = "Pierre"):
+//         alert("Le robot a choisi ... Pierre! Il y a égalité. Rejouez!");
+//         break;
+//     case (proposal = "Feuille"):
+//         alert("Le robot a choisi ... Pierre! Vous avez gagné!");
+//         break;
+//     case (proposal = "Ciseaux"):
+//         alert("Le robot a choisi ... Pierre! Vous avez perdu!");
+// }
+
+
+// if ((robotChoice===0) && (proposal==="Feuille")){
+//     alert("Le robot a choisi ... Pierre! Vous avez gagné!");}
+// if ((robotChoice===1) && (proposal==="Feuille")){
+//     alert("Le robot a choisi ... Feuille! Il y a égalité. Rejouez!");}
+// if ((robotChoice===2) && (proposal==="Feuille")){
+//     alert("Le robot a choisi ... Ciseaux! Vous avez perdu!");}
