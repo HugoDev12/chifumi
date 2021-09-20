@@ -10,11 +10,11 @@ let robotWin =0;
 
 
 // check if user's entry is correct
-if ((/^[a-zA-Z]+$/.test(userName)) && ((userName.length>=2) && (userName.length<=20))){
+if ((/^[a-zA-Z]+$/.test(userName)) && ((userName.length>2) && (userName.length<20))){
     userFirstname = prompt("Veuillez entre votre prénom");
 } else alert("Recommencez :)");
 
-if ((/^[a-zA-Z]+$/.test(userFirstname)) && ((userFirstname.length>=2) && (userFirstname.length<=20))){
+if ((/^[a-zA-Z]+$/.test(userFirstname)) && ((userFirstname.length>2) && (userFirstname.length<20))){
         alert("Bonjour " + (userName.charAt(0).toUpperCase() + userName.slice(1)) + " " 
         + (userFirstname.charAt(0).toUpperCase() + userFirstname.slice(1)) + " , vous allez commencer une partie contre l'ordinateur!");
         + promptBox2(); // call promptbox2 if entries are true
@@ -29,7 +29,7 @@ function promptBox2(){
             || (proposal === 'Ciseaux' || proposal ==='ciseaux')){
             return (toContinue = true) + proposal;
         }
-        else return alert ("Veuillez choisir parmis les propositions indiquées.") + promptBox2();    
+        else alert ("Veuillez choisir parmis les propositions indiquées.") + promptBox2();    
 }
 // return proposal with an upper case letter as first character
 proposal = proposal.charAt(0).toUpperCase() + proposal.slice(1); 
@@ -96,5 +96,5 @@ return robotWin + userWin;
 
 //while ((userWin<=3) || (robotWin <=3)) {promptBox2();}
 
-if (userWin ===3){alert ("Vous avez gagné!");}
-if (robotWin ===3){alert ("L'ordinateur a gagné :(");}
+// if (userWin ===3){alert ("Vous avez gagné!");}
+// if (robotWin ===3){alert ("L'ordinateur a gagné :(");}
