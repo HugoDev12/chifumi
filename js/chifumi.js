@@ -5,7 +5,7 @@ let userFirstname = null;
 let proposal = null;
 let toContinue = false;
 let robotChoice = Math.floor(Math.random() * 3);
-let userWin = 0;
+let userWin =0;
 let robotWin =0;
 
 
@@ -35,6 +35,8 @@ function promptBox2(){
 proposal = proposal.charAt(0).toUpperCase() + proposal.slice(1); 
 
 // call the appropriate function according to the random nomber
+console.log(userWin,robotWin);
+
 if ((toContinue) && (robotChoice===0)){robot0();}
 
 if ((toContinue) && (robotChoice===1)){robot1();}
@@ -43,19 +45,19 @@ if ((toContinue) && (robotChoice===2)){robot2();}
 
 
 // check when robot choice is "Pierre"
-console.log(userWin,robotWin);
+
 
 function robot0(){
 
     if (proposal==="Pierre"){
-        alert("Le robot a choisi ... Pierre! Il y a égalité. Rejouez!") + promptBox2();
+        alert("Le robot a choisi ... Pierre! Il y a égalité. Rejouez!");// + promptBox2();
     } else if (proposal==="Feuille"){
         alert("Le robot a choisi ... Pierre! Vous avez gagné!");
         userWin ++;
-        promptBox2();
+        //promptBox2();
     } else alert("Le robot a choisi ... Pierre! Vous avez perdu!");
         robotWin ++;
-        promptBox2();
+        //promptBox2();
 return robotWin + userWin;
 };
 
@@ -66,12 +68,12 @@ function robot1(){
 if (proposal==="Pierre"){
         alert("Le robot a choisi ... Feuille! Vous avez perdu!");
         robotWin ++;
-        promptBox2();
+        //promptBox2();
     } else if (proposal==="Feuille"){
-        alert("Le robot a choisi ... Feuille! Il y a égalité. Rejouez!") + promptBox2();
+        alert("Le robot a choisi ... Feuille! Il y a égalité. Rejouez!");// + promptBox2();
     } else alert("Le robot a choisi ... Feuille! Vous avez gagné!");
         userWin ++;
-        promptBox2();
+        //promptBox2();
 return robotWin + userWin;
 };
 
@@ -82,18 +84,17 @@ function robot2(){
 if (proposal==="Pierre"){
         alert("Le robot a choisi ... Ciseaux! Vous avez gagné!");
         userWin ++;
-        promptBox2();
+        //promptBox2();
     } else if (proposal==="Feuille"){
         alert("Le robot a choisi ... Ciseaux! Vous avez perdu!");
         robotWin ++;
-        promptBox2();
-    } else alert("Le robot a choisi ... Ciseaux! Il y a égalité. Rejouez!") + promptBox2();
+        //promptBox2();
+    } else alert("Le robot a choisi ... Ciseaux! Il y a égalité. Rejouez!");// + promptBox2();
 return robotWin + userWin;
 };
 
 
-//while ((userWin <= 3) || (robotWin <=3)) {promptBox2();}
+//while ((userWin<=3) || (robotWin <=3)) {promptBox2();}
 
-if (userWin ===3){
-    alert ("Vous avez gagné!");
-} else if (robotWin ===3) alert ("L'ordinateur a gagné :(");
+if (userWin ===3){alert ("Vous avez gagné!");}
+if (robotWin ===3){alert ("L'ordinateur a gagné :(");}
